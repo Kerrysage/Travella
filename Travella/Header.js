@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
-import { Container, Header, Content, Thumbnail, Text } from 'native-base'
+import React, { Component } from "react";
+import { Container, Header, Title, Button, Icon, Left, Right, Body } from "native-base";
 
 
-
-export default class ThumbnailExample extends Component {
-    render() {
-      const uri = "/Logo.png";
-      return (
-        <Container>
-          <Header />
-          <Content>
-            <Text>LOGO</Text>
-            <Thumbnail square large source={{uri: uri}} />
-          </Content>
-        </Container>
-      );
-    }
+export default class HeaderSpan extends Component {
+  render() {
+    return (
+      <Container>
+        <Header span>
+          <Left>
+            <Button transparent>
+              <Icon name="book" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>TRAVELLA</Title>
+          </Body>
+          <Right />
+        </Header>
+      </Container>
+    );
   }
+}

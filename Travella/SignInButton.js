@@ -9,20 +9,11 @@ export default class ButtonIconExample extends Component {
       <Container>
         <Header />
         <Content>
-          <Button iconRight light>
-            <Text>Sign Up</Text>
-            <Icon name='arrow-forward' />
+        <Button iconLeft light>
+            <Icon name='book' />
+            <Text>Sign In</Text>
           </Button>
         </Content>
         </Container>
     )}
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
