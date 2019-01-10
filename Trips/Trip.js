@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, List, ListItem, Thumbnail, Text, Left, Body, Right, Button } from 'native-base';
+import { StyleSheet, View, Text, NavigatorIOS } from 'react-native';
+import { Container, Header, Content, List, ListItem, Thumbnail, Left, Body, Right, Button } from 'native-base';
 
 
-export default class TripComp extends Component {
+export default class Trip extends Component {
   render() {
     return (
+      <View style={styles.container}>
       <Container>
         <Header />
         <Content>
@@ -26,6 +28,14 @@ export default class TripComp extends Component {
           </List>
         </Content>
       </Container>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff'
+  },
+});
