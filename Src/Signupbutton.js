@@ -17,7 +17,8 @@ export default class ButtonIconExample extends Component {
         height: 100, 
         backgroundColor: 'white',
       }}>
-          <Button iconRight bordered dark style={{
+          <Button onPress = { this.props.onPress }
+            iconRight bordered dark style={{
             backgroundColor:'#5EB5BE',
             height: 80,
             justifyContent: 'center',

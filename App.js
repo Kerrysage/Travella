@@ -5,6 +5,8 @@ import Signupbutton from './Src/Signupbutton'
 import SignInButton from './Src/SignInButton'
 import Header from './Src/Header'
 import Trip from './Trips/Trip'
+import UserForm from './Src/UserForm'
+import LoginModal from './Src/LoginModal'
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
 
@@ -16,7 +18,8 @@ class App extends React.Component {
         <Container>
         <Header />
         <SignInButton onPress={() => this.props.navigation.navigate('Trips')}/>
-        <Signupbutton />
+        {/* /<LoginModal /> */}
+        <Signupbutton onPress={() => this.props.navigation.navigate('SignUpForm')}/>
         </Container>
       </View>
     );
@@ -31,11 +34,16 @@ const AppNavigator = createStackNavigator({
   Trips: {
     screen: Trip,
   },
+  SignUpForm: {
+    screen: UserForm,
+  },
 }, {
     initialRouteName: 'Home',
 });
 
-export default createAppContainer(AppNavigator);
+
+  
+export default createAppContainer(AppNavigator); 
 
 
 
