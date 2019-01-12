@@ -1,12 +1,11 @@
-import { StyleSheet, View, Text, NavigatorIOS, Linking } from 'react-native';
+import { StyleSheet, View, Text, NavigatorIOS } from 'react-native';
 import React, { Component } from 'react';
 import { Container, Content, Button, Icon } from 'native-base'
 import Signupbutton from './Src/Signupbutton'
 import SignInButton from './Src/SignInButton'
 import Header from './Src/Header'
 import Trip from './Trips/Trip'
-import UserForm from './Src/UserForm'
-import LoginModal from './Src/LoginModal'
+import SignInForm from './Src/SignInForm'
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 
 
@@ -17,8 +16,7 @@ class App extends React.Component {
       <View style={styles.container}>
         <Container>
         <Header />
-        <SignInButton 
-        onPress={() => this.props.navigation.navigate('SignUpForm')}/>
+        <SignInButton onPress={() => this.props.navigation.navigate('SignUpForm')}/>
         <Signupbutton onPress={() => this.props.navigation.navigate('SignUpForm')}/>
         </Container>
       </View>
@@ -32,7 +30,7 @@ const AppNavigator = createStackNavigator({
     screen: App,
   },
   SignUpForm: {
-    screen: UserForm,
+    screen: SignInForm,
   },
 }, {
     initialRouteName: 'Home',
