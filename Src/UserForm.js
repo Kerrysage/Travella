@@ -8,7 +8,6 @@ export default class UserForm extends Component {
     return (
     <View style={styles.container}>
       <Container>
-        <Header />
         <Content>
           <Form>
             <Item>

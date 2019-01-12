@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, NavigatorIOS } from 'react-native';
+import { StyleSheet, View, Text, NavigatorIOS, Linking } from 'react-native';
 import React, { Component } from 'react';
 import { Container, Content, Button, Icon } from 'native-base'
 import Signupbutton from './Src/Signupbutton'
@@ -17,8 +17,8 @@ class App extends React.Component {
       <View style={styles.container}>
         <Container>
         <Header />
-        <SignInButton onPress={() => this.props.navigation.navigate('Trips')}/>
-        {/* /<LoginModal /> */}
+        <SignInButton 
+        onPress={() => this.props.navigation.navigate('SignUpForm')}/>
         <Signupbutton onPress={() => this.props.navigation.navigate('SignUpForm')}/>
         </Container>
       </View>
@@ -30,9 +30,6 @@ class App extends React.Component {
 const AppNavigator = createStackNavigator({
   Home: {
     screen: App,
-  },
-  Trips: {
-    screen: Trip,
   },
   SignUpForm: {
     screen: UserForm,
