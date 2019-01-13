@@ -11,38 +11,48 @@ import {
   Alert
 } from 'react-native';
 
+
 class HeaderComp extends Component {
 
-  render() {
-      return (
-          <KeyboardAvoidingView style={styles.container}>
-              <View style={styles.loginContainer}>
-                  <Image resizeMode="stretch" style={styles.logo} source={require('../Logo.png')} />
-              </View>
-          </KeyboardAvoidingView>
-      )
+    render() {
+        return (
+            <KeyboardAvoidingView style={styles.container}>
+                <View style={styles.loginContainer}>
+                    <Image resizeMode="stretch" style={styles.logo} source={require('../Logo.png')} />
+                </View>
+            </KeyboardAvoidingView>
+        )
+    }
   }
-}
 
-
-export default class LoginView extends Component {
+export default class SignUpView extends Component {
 
   constructor(props) {
     super(props);
     state = {
+      fullName: '',
       email   : '',
       password: '',
     }
   }
 
   onClickListener = (viewId) => {
-    Alert.alert("Alert", "Fill out fields "+viewId);
+    Alert.alert("Alert", "Button pressed "+viewId);
   }
 
   render() {
     return (
       <View style={styles.container}>
       <Header />
+        <View style={styles.inputContainer}>
+          <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/male-user/ultraviolet/50/3498db'}}/>
+          <TextInput style={styles.inputs}
+              placeholder="Full name"
+              keyboardType="email-address"
+              underlineColorAndroid='transparent'
+              onChangeText={(fullName) => this.setState({fullName})}/>
+        </View>
+
         <View style={styles.inputContainer}>
           <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/message/ultraviolet/50/3498db'}}/>
           <TextInput style={styles.inputs}
@@ -61,16 +71,8 @@ export default class LoginView extends Component {
               onChangeText={(password) => this.setState({password})}/>
         </View>
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('login')}>
-          <Text style={styles.loginText}>Login</Text>
-        </TouchableHighlight>
-
-        <TouchableHighlight style={styles.buttonContainer} onPress={() => this.onClickListener('restore_password')}>
-            <Text>Forgot your password?</Text>
-        </TouchableHighlight>
-
-        <TouchableHighlight style={styles.buttonContainer} onPress={() => this.onClickListener('register')}>
-            <Text>Register</Text>
+        <TouchableHighlight style={[styles.buttonContainer, styles.signupButton]} onPress={() => this.onClickListener('sign_up')}>
+          <Text style={styles.signUpText}>Sign up</Text>
         </TouchableHighlight>
       </View>
     );
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#DCDCDC',
+    backgroundColor: '#00b5ec',
   },
   inputContainer: {
       borderBottomColor: '#F5FCFF',
@@ -116,10 +118,10 @@ const styles = StyleSheet.create({
     width:250,
     borderRadius:30,
   },
-  loginButton: {
-    backgroundColor: "#00b5ec",
+  SignUpButton: {
+    backgroundColor: "#FF4DFF",
   },
-  loginText: {
+  signUpText: {
     color: 'white',
   },
   loginContainer:{
@@ -135,3 +137,5 @@ const styles = StyleSheet.create({
 }
 });
  
+
+
