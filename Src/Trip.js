@@ -80,6 +80,6 @@ export default class Trip extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#0da6a6'
   },
 });

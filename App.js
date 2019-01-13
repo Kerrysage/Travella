@@ -4,7 +4,6 @@ import { Container, Content, Button, Icon } from 'native-base'
 import Signupbutton from './Src/Signupbutton'
 import SignInButton from './Src/SignInButton'
 import Header from './Src/Header'
-import Trip from './Trips/Trip'
 import SignInForm from './Src/SignInForm'
 import SignUpForm from './Src/SignUpForm'
 import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';

@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header'
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  Button,
-  TouchableHighlight,
-  Image,
-  Alert
-} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, TouchableHighlight, Image, Alert} from 'react-native';
 
 
 class HeaderComp extends Component {
@@ -84,7 +75,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#00b5ec',
+    backgroundColor: '#0da6a6',
   },
   inputContainer: {
       borderBottomColor: '#F5FCFF',

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header'
+import { Container, Content, SignInForm, Icon, Form } from 'native-base'
+import { createAppContainer, createStackNavigator, StackActions, NavigationActions } from 'react-navigation';
 import {
   StyleSheet,
   Text,
@@ -61,7 +63,7 @@ export default class LoginView extends Component {
               onChangeText={(password) => this.setState({password})}/>
         </View>
 
-        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onClickListener('login')}>
+        <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.props.navigation.navigate('Trip')}>
           <Text style={styles.loginText}>Login</Text>
         </TouchableHighlight>
 
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#DCDCDC',
+    backgroundColor: '#0da6a6'
   },
   inputContainer: {
       borderBottomColor: '#F5FCFF',
